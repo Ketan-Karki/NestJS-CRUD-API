@@ -1,73 +1,89 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS API Tutorial
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This repository contains the code for building a CRUD REST API using NestJS, as demonstrated in the video tutorial by Vladimir.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Table of Contents
+- Introduction
+- Prerequisites
+- Installation
+- Project Structure
+- Modules
+- Running the Application
+- Testing
+- Contributing
+- License
 
-## Description
+## Introduction
+In this tutorial, we build a scalable and maintainable CRUD REST API using NestJS. The project includes authentication, end-to-end tests, and integration with relational databases using Prisma.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prerequisites
+- Basic understanding of JavaScript ES6 and TypeScript
+- Node.js (version 16 or later)
+- NestJS CLI
+- Docker (for database setup)
 
 ## Installation
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd nestjs-api-tutorial
+    ```
 
-```bash
-$ yarn install
-```
+2. Install dependencies:
+    ```bash
+    yarn install
+    ```
 
-## Running the app
+3. Install NestJS CLI globally:
+    ```bash
+    npm install -g @nestjs/cli
+    ```
 
-```bash
-# development
-$ yarn run start
+4. Set up the database:
+    ```bash
+    docker-compose up -d
+    ```
 
-# watch mode
-$ yarn run start:dev
+## Project Structure
+- `src/`: Contains the source code
+  - `auth/`: Authentication module
+  - `bookmarks/`: Bookmarks module
+  - `common/`: Common utilities and services
+  - `prisma/`: Prisma schema and migrations
+- `test/`: End-to-end tests
+- `docker-compose.yml`: Docker configuration for the database
 
-# production mode
-$ yarn run start:prod
-```
+## Modules
+### Auth Module
+Handles user authentication, including sign-up and login functionalities.
 
-## Test
+### Bookmarks Module
+Manages CRUD operations for bookmarks.
 
-```bash
-# unit tests
-$ yarn run test
+### Prisma Module
+Encapsulates database logic and provides a connection to the database.
 
-# e2e tests
-$ yarn run test:e2e
+## Running the Application
+1. Start the application in development mode:
+    ```bash
+    yarn start:dev
+    ```
 
-# test coverage
-$ yarn run test:cov
-```
+2. The application will run on `http://localhost:3333`.
 
-## Support
+## Testing
+1. Run end-to-end tests:
+    ```bash
+    yarn test:e2e
+    ```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+2. Ensure the database is cleaned and restarted before each test run.
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Contributing
+Feel free to open issues or submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
+This project is licensed under the MIT License.
 
-Nest is [MIT licensed](LICENSE).
+## Credits
+This project follows the tutorial from [NestJs Course for Beginners - Create a REST API](https://www.youtube.com/watch?v=GHTA143_b-s). Special thanks to **Vladimir** for the comprehensive guide.
